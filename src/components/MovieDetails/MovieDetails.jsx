@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useLocation } from 'react-router-dom';
 import getYear from 'utils/getYear';
 import getUserScore from 'utils/getUserScore';
+import { BsFileEarmarkImageFill } from 'react-icons/bs';
 import {
   BackLink,
   Content,
@@ -21,12 +22,16 @@ const MovieDetails = ({ movieDetails }) => {
       <BackLink to={location.state?.from ?? '/'}>Go Back</BackLink>
 
       <ContentWrapper>
-        <img
-          src={`https://image.tmdb.org/t/p/w300${poster_path}`}
-          alt={title}
-          width={300}
-          height={450}
-        />
+        {poster_path ? (
+          <img
+            src={`https://image.tmdb.org/t/p/w300${poster_path}`}
+            alt={title}
+            width={300}
+            height={450}
+          />
+        ) : (
+          <BsFileEarmarkImageFill size={300} />
+        )}
         <Content>
           <h2>
             {title} <span>{getYear(release_date)}</span>
