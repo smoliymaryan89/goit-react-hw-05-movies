@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { BsFillImageFill } from 'react-icons/bs';
+import { BsFileEarmarkImageFill } from 'react-icons/bs';
 import { toast } from 'react-toastify';
 import API from 'services/moviesAPIService';
 import { CastList } from './Cast.styled';
@@ -34,7 +34,7 @@ const Cast = () => {
                 width={100}
               />
             ) : (
-              <BsFillImageFill size={100} />
+              <BsFileEarmarkImageFill size={150} />
             )}
             <h2>{name}</h2>
             <p>Character: {character}</p>
