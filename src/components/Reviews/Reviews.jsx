@@ -13,7 +13,6 @@ const Reviews = () => {
       try {
         const { results } = await API.getMovieReviews(movieId);
         setReviews(results);
-        console.log(results);
       } catch (error) {
         setError(error);
       }
