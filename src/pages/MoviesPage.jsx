@@ -44,7 +44,7 @@ const MoviesPage = () => {
     <>
       {error && toast.error('Something went wrong, please try again!')}
       {isLoading && <Loader />}
-      <SearchBar onSubmit={handleSubmit} />
+      <SearchBar onSubmit={handleSubmit} query={query} />
       {movies && <MovieList movies={movies} />}
     </>
   );

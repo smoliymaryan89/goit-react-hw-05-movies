@@ -5,8 +5,8 @@ import { toast } from 'react-toastify';
 import { Wrapper } from 'components/MovieDetails/MovieDetails.styled';
 import { Form } from './SearchBar.styled';
 
-const SearchBar = ({ onSubmit }) => {
-  const [searchQuery, setSearchQuery] = useState('');
+const SearchBar = ({ onSubmit, query }) => {
+  const [searchQuery, setSearchQuery] = useState('' || query);
 
   const handleInputChange = e => {
     setSearchQuery(e.target.value);
@@ -20,8 +20,6 @@ const SearchBar = ({ onSubmit }) => {
     }
 
     onSubmit(searchQuery);
-
-    setSearchQuery('');
   };
 
   return (
@@ -45,6 +43,7 @@ const SearchBar = ({ onSubmit }) => {
 
 SearchBar.propTypes = {
   onSubmit: PropTypes.func.isRequired,
+  query: PropTypes.string,
 };
 
 export default SearchBar;
